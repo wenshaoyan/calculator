@@ -16,6 +16,7 @@ import com.wenshao.calculator.view.IconFontTextView;
 
 public class MainActivity extends AppCompatActivity{
     private Context mContent;
+
     private CalculatorEditText ed_input;
 
     @Override
@@ -38,11 +39,21 @@ public class MainActivity extends AppCompatActivity{
                 clickFont(font_log);
             }
         });
+
+
+
+
+        //Log.i("===========", viewById.getText().toString());
+
+
     }
 
     private void clickFont(IconFontTextView v){
         String str = (String)IconFontTextView.symbolSet.get(v.getSymbol());
-        ed_input.addText(str);
+        String string = getResources().getString(R.string.icon_function);
+        System.out.println(string);
+        ed_input.addText(string);
+        //ed_input.setText("&#xe6db;");
     }
 
 }

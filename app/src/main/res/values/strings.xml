@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">calculator</string>
-    <string name="icon_clear">&#xe640;</string>
-    <string name="icon_calculator">&#xe60a;</string>
+    <string name="icon_clear">&#xe60c;</string>
+    <string name="icon_calculator">&#xe60b;</string>
     <string name="icon_linefeed">&#xe60d;</string>
-    <string name="icon_function">&#xe601;</string>
-    <string name="icon_backspace">&#xe62a;</string>
-    <string name="icon_left">&#xe617;</string>
-    <string name="icon_right">&#xe503;</string>
-    <string name="icon_letter">&#xe633;</string>
+    <string name="icon_function">&#xe609;</string>
+    <string name="icon_backspace">&#xe60a;</string>
+    <string name="icon_left">&#xe603;</string>
+    <string name="icon_right">&#xe604;</string>
+    <string name="icon_letter">&#xe60a;</string>
 
 </resources>
