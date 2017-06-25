@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.wenshao.calculator.view.CalculatorEditText
+        android:id="@+id/ed_input"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/colorInputBack" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorOpBack"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.wenshao.calculator.view.IconFontTextView
+            style="@style/IconFont"
+            android:text="@string/icon_clear" />
+
+        <com.wenshao.calculator.view.IconFontTextView
+            style="@style/IconFont"
+            android:text="@string/icon_left" />
+
+        <com.wenshao.calculator.view.IconFontTextView
+            style="@style/IconFont"
+            android:text="@string/icon_right" />
+
+        <com.wenshao.calculator.view.IconFontTextView
+            style="@style/IconFont"
+            android:text="@string/icon_backspace" />
+
+        <com.wenshao.calculator.view.IconFontTextView
+            style="@style/IconFont"
+            android:text="@string/icon_linefeed" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/colorIncisionLine" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorOpBack"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.wenshao.calculator.view.IconFontTextView
+                style="@style/IconFont"
+                android:text="@string/icon_calculator" />
+
+            <com.wenshao.calculator.view.IconFontTextView
+                style="@style/IconFont"
+                android:text="@string/icon_function" />
+
+            <com.wenshao.calculator.view.IconFontTextView
+                style="@style/IconFont"
+                android:text="@string/icon_letter" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:id="@+id/table1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="0"
+                android:stretchColumns="*">
+
+                <TableRow style="@style/ButtonShow">
+
+                    <com.wenshao.calculator.view.IconFontTextView
+                        android:id="@+id/font_log"
+                        style="@style/FontKey"
+                        android:text="@string/icon_function"
+                        app:symbol="log"/>
+
+                    <com.wenshao.calculator.view.IconFontTextView
+                        style="@style/FontKey"
+                        android:text="2" />
+
+                    <com.wenshao.calculator.view.IconFontTextView
+                        style="@style/FontKey"
+                        android:text="1" />
+
+                    <com.wenshao.calculator.view.IconFontTextView
+                        style="@style/FontKey"
+                        android:text="a" />
+
+                    <com.wenshao.calculator.view.IconFontTextView
+                        style="@style/FontKey"
+                        android:text="3" />
+
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

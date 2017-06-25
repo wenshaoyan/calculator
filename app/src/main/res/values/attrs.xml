@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="symbol">
+        <enum name="log" value="1"/>
+    </attr>
+    <declare-styleable name="IconFontTextView">
+        <attr name="symbol"/>
+    </declare-styleable>
+</resources>
