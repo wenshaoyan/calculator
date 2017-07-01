@@ -4,11 +4,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.util.SparseArray;
 import android.widget.TextView;
 
 import com.wenshao.calculator.R;
+
 
 
 /**
@@ -17,13 +16,9 @@ import com.wenshao.calculator.R;
  */
 public class IconFontTextView extends TextView {
     private  final static String TAG = "IconFontTextView";
-    private int symbol;
+    private String symbol;
 
-    public final static SparseArray symbolSet = new SparseArray();
 
-    static {
-        symbolSet.put(1,"log");
-    }
     public IconFontTextView(Context context) {
         this(context,null);
     }
@@ -37,14 +32,15 @@ public class IconFontTextView extends TextView {
         Typeface iconfont = Typeface.createFromAsset(context.getAssets(), "iconfont/match-init.ttf");
         setTypeface(iconfont);
         TypedArray mTypedArray = context.obtainStyledAttributes(attrs,R.styleable.IconFontTextView);
-        symbol = mTypedArray.getInt(R.styleable.IconFontTextView_symbol,0);
+        symbol = mTypedArray.getString(R.styleable.IconFontTextView_symbol);
+        mTypedArray.getResources();
     }
 
 
-    public void setSymbol(int s){
+    public void setSymbol(String s){
         symbol = s;
     }
-    public int getSymbol(){
+    public String getSymbol(){
         return symbol;
     }
 

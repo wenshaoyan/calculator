@@ -83,26 +83,34 @@
                 <TableRow style="@style/ButtonShow">
 
                     <com.wenshao.calculator.view.IconFontTextView
-                        android:id="@+id/font_log"
                         style="@style/FontKey"
-                        android:text="@string/icon_function"
-                        app:symbol="log"/>
+                        android:text="7"
+                        android:onClick="clickFont"
+                        app:symbol="7"/>
 
                     <com.wenshao.calculator.view.IconFontTextView
                         style="@style/FontKey"
-                        android:text="2" />
+                        android:text="8"
+                        android:onClick="clickFont"
+                        app:symbol="8"/>
 
                     <com.wenshao.calculator.view.IconFontTextView
                         style="@style/FontKey"
-                        android:text="1" />
+                        android:text="9"
+                        android:onClick="clickFont"
+                        app:symbol="9"/>
 
                     <com.wenshao.calculator.view.IconFontTextView
                         style="@style/FontKey"
-                        android:text="a" />
+                        android:text="5"
+                        android:onClick="clickFont"
+                        app:symbol="5"/>
 
                     <com.wenshao.calculator.view.IconFontTextView
                         style="@style/FontKey"
-                        android:text="3" />
+                        android:text="3"
+                        android:onClick="clickFont"
+                        app:symbol="7"/>
 
                 </TableRow>
 

@@ -1,30 +1,18 @@
 package com.wenshao.calculator.view;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.text.Editable;
-import android.text.Selection;
 import android.util.AttributeSet;
 
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
+
 import android.widget.TextView;
 
-import com.wenshao.calculator.R;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.logo;
-import static android.R.attr.radius;
-import static android.R.attr.thickness;
-import static com.wenshao.calculator.R.id.log;
 
 /**
  * Created by wenshao on 2017/6/13.
@@ -48,7 +36,7 @@ public class CalculatorEditText extends TextView {
     public CalculatorEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mPaint = new Paint();
-        mFormulaList = new ArrayList<>();
+        mFormulaList = new ArrayList<String>();
 
         mIconFont = Typeface.createFromAsset(context.getAssets(), "iconfont/match-init.ttf");
         mPaint.setTypeface(mIconFont);
@@ -60,17 +48,18 @@ public class CalculatorEditText extends TextView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         mPaint.setColor(Color.WHITE);
-        mPaint.setTextSize(80);
+        mPaint.setTextSize(100);
 
         int i = 100;
         for (String str : mFormulaList){
             canvas.drawText(str, i, i,mPaint);
-            i=i+50;
+            //i=i+50;
         }
     }
 
-    public void addText(CharSequence text) {
-        mFormulaList.add(text.toString());
+    public void addText(String text) {
+        //BasicOperator operator = SymbolMap.getOperator(text);
+        mFormulaList.add("11");
         invalidate();
     }
     public void setSelection(int start, int stop) {
