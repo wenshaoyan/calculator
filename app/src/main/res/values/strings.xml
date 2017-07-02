@@ -11,4 +11,37 @@
     <string name="icon_log">&#xe60e;</string>
 
 
+
+
+
+    <!--数字字体-->
+    <string name="icon_show_1">1</string>
+    <string name="icon_show_2">2</string>
+    <string name="icon_show_3">3</string>
+    <string name="icon_show_4">4</string>
+    <string name="icon_show_5">5</string>
+    <string name="icon_show_6">6</string>
+    <string name="icon_show_7">7</string>
+    <string name="icon_show_8">8</string>
+    <string name="icon_show_9">9</string>
+    <string name="icon_show_0">0</string>
+
+    <!--字母字体-->
+    <string name="icon_show_a">a</string>
+    <string name="icon_show_b">b</string>
+    <string name="icon_show_c">c</string>
+    <string name="icon_show_h">h</string>
+    <string name="icon_show_k">k</string>
+    <string name="icon_show_p">p</string>
+    <string name="icon_show_x">x</string>
+    <string name="icon_show_y">y</string>
+    <string name="icon_show_z">z</string>
+
+
+    <!--运算符-->
+    <string name="icon_show_add">+</string>
+    <string name="icon_show_dec">-</string>
+    <string name="icon_show_ride">*</string>
+    <string name="icon_show_div">\</string>
+
 </resources>

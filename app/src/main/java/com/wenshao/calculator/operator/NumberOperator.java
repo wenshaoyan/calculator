@@ -6,7 +6,7 @@ package com.wenshao.calculator.operator;
  */
 
 public class NumberOperator extends BasicOperator {
-    public NumberOperator(String name, String source) {
+    public NumberOperator(String name, int source) {
         super(name, source);
     }
 

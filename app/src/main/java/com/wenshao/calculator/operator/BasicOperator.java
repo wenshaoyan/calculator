@@ -8,9 +8,9 @@ package com.wenshao.calculator.operator;
 
 public class BasicOperator {
     private String name;    // 名称
-    private String source;  // iconFont对应的source
+    private int source;  // iconFont对应的source
 
-    public BasicOperator(String name, String source) {
+    public BasicOperator(String name, int source) {
         this.name = name;
         this.source = source;
     }
@@ -23,11 +23,11 @@ public class BasicOperator {
         this.name = name;
     }
 
-    public String getSource() {
+    public int getSource() {
         return source;
     }
 
-    public void setSource(String source) {
+    public void setSource(int source) {
         this.source = source;
     }
 }

@@ -4,11 +4,14 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 
 import com.wenshao.calculator.view.CalculatorEditText;
 import com.wenshao.calculator.view.IconFontTextView;
+
+import static android.R.attr.offset;
 
 public class MainActivity extends AppCompatActivity{
     private Context mContent;
@@ -25,8 +28,13 @@ public class MainActivity extends AppCompatActivity{
 
     private void initUi() {
         ed_input = (CalculatorEditText)findViewById(R.id.ed_input);
-
-
+        IconFontTextView test = (IconFontTextView) findViewById(R.id.test);
+        ed_input.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.scrollTo(50,50);
+            }
+        });
         /*final IconFontTextView font_log= (IconFontTextView)findViewById(R.id.font_log);
 
         font_log.setOnClickListener(new View.OnClickListener() {
@@ -46,10 +54,7 @@ public class MainActivity extends AppCompatActivity{
 
     public void clickFont(View view){
         IconFontTextView v = (IconFontTextView)view;
-        //String str = IconFontTextView.symbolMap.get(v.getSymbol()).getSource();
-        //String string = getResources().getString(R.string.icon_log);
         ed_input.addText(v.getSymbol());
-        //ed_input.setText("&#xe6db;");
     }
 
 }
