@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wenshao.calculator.operator.BasicOperator;
@@ -18,7 +19,6 @@ import com.wenshao.calculator.operator.SymbolMap;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 /**
@@ -51,6 +51,9 @@ public class CalculatorEditText extends TextView {
     private static final int startX = 50;
     private static final int startY = 100;
 
+    private int currentCursorX;
+    private int currentCursorY;
+
 
     public CalculatorEditText(Context context) {
         this(context, null);
@@ -64,11 +67,11 @@ public class CalculatorEditText extends TextView {
     public CalculatorEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mPaint = new Paint();
-        mFormulaList = new ArrayList<BasicOperator>();
+        mFormulaList = new ArrayList<>();
 
         mIconFont = Typeface.createFromAsset(context.getAssets(), "iconfont/match-init.ttf");
         mPaint.setTypeface(mIconFont);
-        cursorLocations = new ArrayList<CursorLocation>();
+        cursorLocations = new ArrayList<>();
     }
 
     private class CursorLocation {
@@ -84,8 +87,9 @@ public class CalculatorEditText extends TextView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        screenWidth = canvas.getWidth();
         mPaint.setColor(Color.WHITE);
-        mPaint.setTextSize(100);
+        mPaint.setTextSize(50);
 
         int x = startX;
         int y = startY;
@@ -94,12 +98,14 @@ public class CalculatorEditText extends TextView {
             CursorLocation cursorLocation = new CursorLocation(x, y);
             cursorLocations.add(cursorLocation);
             x += 50;
-
-
+        }
+        if (currentCursorX == 0) {
+            currentCursorX = x;
+            currentCursorY = y;
         }
         maxX = x;
         maxY = y;
-        screenWidth = canvas.getWidth();
+
 
         // 记录当前光标的位置
         currentCursorIndex = cursorLocations.size();
@@ -109,10 +115,6 @@ public class CalculatorEditText extends TextView {
     public void addText(String text) {
         BasicOperator operator = SymbolMap.getOperator(text);
         mFormulaList.add(operator);
-        //TODO  每次输入移动到结尾
-        /*if (maxX>screenWidth){
-            scrollBy(60, 0);
-        }*/
         invalidate();
     }
 
@@ -128,8 +130,6 @@ public class CalculatorEditText extends TextView {
         //获取到手指处的横坐标和纵坐标
         int x = (int) event.getX();
         int y = (int) event.getY();
-
-
 
         if (maxX < screenWidth) {   // 当前输入的宽度大于屏幕的宽度
             return true;
@@ -147,12 +147,12 @@ public class CalculatorEditText extends TextView {
 
                 int orientation = getOrientation(offsetX, offsetY);
 
-                if ((maxX+moveX)<screenWidth && orientation=='l'){ // 判断是否可以左移
-                    Log.i(TAG, "不允许左移动！"+getScrollX()+"--"+maxX+"---"+moveX);
+                if ((maxX + moveX) < screenWidth && orientation == 'l') { // 判断是否可以左移
+                    Log.i(TAG, "不允许左移动！" + getScrollX() + "--" + maxX + "---" + moveX);
                     //scrollTo(150, 0);
                     break;
                 }
-                if (moveX>=0 && orientation=='r'){  // 判断是否可以右移
+                if (moveX >= 0 && orientation == 'r') {  // 判断是否可以右移
                     Log.i(TAG, "不允许右移动！");
                     scrollTo(0, 0);
                     break;
@@ -196,7 +196,7 @@ public class CalculatorEditText extends TextView {
     }
 
     //TODO  屏幕移动字符串结尾
-    private void screenEnd(){
+    private void screenEnd() {
 
     }
 
